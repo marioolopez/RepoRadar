@@ -1,5 +1,5 @@
 #pipeline de integración continua de SentinelForge
-name: SentinelForge CI
+name: RepoRadar CI
 
 #ejecutamos el pipeline cuando subimos cambios
 #y cuando abrimos o actualizamos una Pull Request.
