@@ -1,13 +1,55 @@
-
-# Entornos virtuales de Python
+#Python
 .venv/
-venv/
-
-# Archivos temporales de Python
 __pycache__/
 *.pyc
+.pytest_cache/
 
-# Variables de entorno y secretos
+
+#variables de entorno y secretos
 .env
 .env.*
 !.env.example
+*.pem
+*.key
+
+
+#node.js y React FRONTEND
+node_modules/
+frontend/dist/
+
+
+#archivos temporales
+*.log
+.DS_Store
+
+
+#entornos de desarrollo
+.vscode/
+.idea/
+
+
+#cachés de Python
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+
+#cachés de herramientas de seguridad
+.trivycache/
+.semgrep/
+
+
+#bases de datos locales
+*.sqlite
+*.sqlite3
+*.db
+
+
+#archivos temporales
+tmp/
+temp/
+
+
+#.gitignore evita que ciertos archivos se suban a GitHub
+#.dockerignore evita que Docker envíe esos archivos al contexto de construcción de las imágenes.

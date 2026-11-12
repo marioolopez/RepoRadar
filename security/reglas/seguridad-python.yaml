@@ -1,0 +1,29 @@
+rules:
+  #detecta el uso de eval()
+  - id: python-eval-peligroso
+    languages: [python]
+    severity: ERROR
+    message: "Uso peligroso de eval(): puede ejecutar código no confiable."
+    pattern: eval(...)
+
+  #detecta el uso de exec()
+  - id: python-exec-peligroso
+    languages: [python]
+    severity: ERROR
+    message: "Uso de exec(): puede ejecutar código Python arbitrario."
+    pattern: exec(...)
+
+  #detecta subprocess con shell=True
+  - id: python-subprocess-shell
+    languages: [python]
+    severity: WARNING
+    message: "subprocess con shell=True puede facilitar inyección de comandos."
+    patterns:
+      - pattern: subprocess.$FUNC(..., shell=True, ...)
+
+  #detecta uso de pickle.load()
+  - id: python-pickle-inseguro
+    languages: [python]
+    severity: WARNING
+    message: "pickle.load() puede ejecutar código si los datos no son confiables."
+    pattern: pickle.load(...)

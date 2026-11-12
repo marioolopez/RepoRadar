@@ -1,0 +1,7 @@
+rules:
+  - id: python-eval-peligroso
+    languages:
+      - python
+    severity: ERROR
+    message: "Uso de eval(): puede ejecutar código Python no confiable."
+    pattern: eval(...)

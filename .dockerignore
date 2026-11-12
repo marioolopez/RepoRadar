@@ -1,0 +1,32 @@
+# Git
+.git/
+.github/
+
+# Credenciales y variables privadas
+.env
+.env.*
+!.env.example
+
+# Python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Node.js
+**/node_modules/
+frontend/dist/
+
+# Archivos privados o temporales
+**/*.pem
+**/*.key
+**/*.log
+tmp/
+temp/
+
+# Editores
+.vscode/
+.idea/
+
+#.gitignore evita que ciertos archivos se suban a GitHub.
+#.dockerignore evita que Docker envíe esos archivos al contexto de construcción de las imágenes.
