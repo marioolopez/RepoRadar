@@ -1,8 +1,8 @@
-# Tipos de columnas de PostgreSQL
+#tipos de columnas de PostgreSQL
 from sqlalchemy import Integer, String, Text, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
-# Compartimos la misma clase Base que los demás modelos
+#compartimos la misma clase Base que los demás modelos
 from modelos.proyectos import Base
 
 
