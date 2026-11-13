@@ -1,7 +1,5 @@
 # RepoRadar
 
-**# RepoRadar
-
 **Plataforma web de análisis de seguridad para repositorios de GitHub.**
 
 RepoRadar es un proyecto personal de desarrollo Backend y DevSecOps que permite registrar repositorios públicos de GitHub, ejecutar análisis de seguridad y consultar las vulnerabilidades detectadas desde un dashboard web.
