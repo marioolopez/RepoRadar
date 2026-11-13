@@ -24,7 +24,7 @@ RUN curl -fL \
     && chmod +x /usr/local/bin/trivy \
     && rm /tmp/trivy.tar.gz
 
-#entorno Python de nuestra API interna
+#entorno Python de la API interna
 RUN python3 -m venv /opt/scanner-venv
 
 RUN /opt/scanner-venv/bin/pip install --no-cache-dir fastapi uvicorn
