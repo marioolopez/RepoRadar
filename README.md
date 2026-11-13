@@ -482,8 +482,6 @@ Pruebas con Pytest, simulación de dependencias, FastAPI TestClient y bases de d
 
 El proyecto permite analizar repositorios públicos de GitHub desde una interfaz web, ejecutar tres herramientas de seguridad y consultar los resultados almacenados en PostgreSQL.
 
-La aplicación se encuentra en evolución y no debe considerarse una solución de seguridad lista para producción.
-
 ---
 
 **RepoRadar — Proyecto personal de Backend y DevSecOps.**
