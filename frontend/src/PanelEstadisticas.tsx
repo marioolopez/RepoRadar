@@ -62,7 +62,7 @@ function PanelEstadisticas({
   analisisId,
   seleccionarAnalisis,
 }: Props) {
-  // Contamos los resultados por motor
+  //cuento los resultados por motor
   const herramientas = [
     { nombre: "Semgrep", color: "#2dd4bf" },
     { nombre: "Gitleaks", color: "#60a5fa" },
@@ -78,7 +78,7 @@ function PanelEstadisticas({
     ).length,
   }));
 
-  //agrupamos las severidades para la visualización
+  //agrupo las severidades para la visualización
   const niveles = [
     {
       nombre: "Crítica / Alta / Error",
