@@ -263,10 +263,10 @@ def ejecutar_escaneo(solicitud: SolicitudEscaneo):
                         detail="El repositorio supera los 5000 archivos"
                     )
 
-                if total_bytes > 20 * 1024 * 1024:
-                    raise HTTPException(
+                if total_bytes > 50 * 1024 * 1024:
+                        raise HTTPException(
                         status_code=413,
-                        detail="El repositorio supera los 20 MB"
+                        detail="El repositorio supera el límite de 50 MB"
                     )
 
         #3-PREPARAR LOS ARCHIVOS DEL REPOSITORIO
@@ -315,10 +315,10 @@ def ejecutar_escaneo(solicitud: SolicitudEscaneo):
                         detail="El repositorio supera los 5000 archivos"
                     )
 
-                if tamano_total > 20 * 1024 * 1024:
+                if tamano_total > 50 * 1024 * 1024:
                     raise HTTPException(
                         status_code=413,
-                        detail="El repositorio supera los 20 MB de archivos"
+                        detail="El repositorio supera los 50 MB de archivos"
                     )
 
         #5-EJECUTAR LOS TRES MOTORES DE SEGURIDAD
