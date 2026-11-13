@@ -1,5 +1,7 @@
 # RepoRadar
 
+**# RepoRadar
+
 **Plataforma web de análisis de seguridad para repositorios de GitHub.**
 
 RepoRadar es un proyecto personal de desarrollo Backend y DevSecOps que permite registrar repositorios públicos de GitHub, ejecutar análisis de seguridad y consultar las vulnerabilidades detectadas desde un dashboard web.
@@ -213,6 +215,9 @@ Algunos de los principales son:
 | GET | `/proyectos/analisis/{analisis_id}/vulnerabilidades` | Consultar vulnerabilidades |
 | GET | `/health` | Comprobar el estado básico del backend |
 | GET | `/db-health` | Comprobar la conexión con PostgreSQL |
+| GET | `/proyectos/{proyecto_id}` | Consultar un proyecto |
+| PUT | `/proyectos/{proyecto_id}` | Actualizar un proyecto |
+| DELETE | `/proyectos/{proyecto_id}` | Eliminar un proyecto y sus registros asociados |
 
 La documentación interactiva de la API está disponible mediante Swagger UI:
 
@@ -225,6 +230,7 @@ El frontend está desarrollado con React y TypeScript.
 Permite:
 
 - Crear proyectos sin utilizar Swagger.
+- Eliminar proyectos junto con sus análisis y vulnerabilidades asociados, previa confirmación.
 - Seleccionar proyectos registrados.
 - Ejecutar análisis de seguridad.
 - Consultar resultados anteriores.
@@ -250,7 +256,7 @@ sentinelforge/
 │   ├── database.py
 │   ├── main.py
 │   ├── Dockerfile
-│   └── requirements.txt/
+│   └── requirements.txt
 ├── frontend/
 │   ├── public/
 │   ├── src/
@@ -274,7 +280,7 @@ sentinelforge/
 ├── .env.example
 ├── .gitignore
 ├── .dockerignore
-├── compose.yaml
+├── compose.yml
 └── README.md
 ```
 
@@ -294,8 +300,8 @@ Para ejecutar RepoRadar se necesita:
 ### Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/reporadar.git
-cd reporadar
+git clone https://github.com/marioolopez/RepoRadar.git
+cd RepoRadar
 ```
 
 Sustituir `TU_USUARIO` por el propietario real del repositorio.
@@ -388,7 +394,14 @@ Realiza dos trabajos:
 
 **Frontend:** instala Node.js, ejecuta `npm ci` y comprueba la compilación con `npm run build`.
 
-La ejecución del workflow en GitHub queda pendiente de validar tras publicar el repositorio.
+El proyecto cuenta con un pipeline de integración continua configurado mediante GitHub Actions.
+
+Cada vez que se realiza un `push` o se abre una Pull Request, GitHub ejecuta automáticamente dos trabajos:
+
+- **Pruebas del backend:** instalación de dependencias de Python y ejecución de Pytest.
+- **Compilación del frontend:** instalación de dependencias de Node.js y compilación de React y TypeScript.
+
+Ambos trabajos han sido ejecutados y verificados correctamente en GitHub Actions.
 
 ## 12. Seguridad y limitaciones actuales
 
